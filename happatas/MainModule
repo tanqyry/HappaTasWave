@@ -1,0 +1,20 @@
+script.TASInitiator.Parent = game.ReplicatedFirst
+
+script.TASRS.Parent = game.ReplicatedStorage
+
+script.TASServer.Parent = game.ServerScriptService
+
+script.TASUserInterface.Parent = game.StarterGui
+
+if game.StarterPlayer.StarterCharacterScripts:FindFirstChild("Animate") then
+	game.StarterPlayer.StarterCharacterScripts.Animate:Destroy()
+end
+script.ForkedScripts.Animate.Parent = game.StarterPlayer.StarterCharacterScripts
+
+game.StarterPlayer.StarterPlayerScripts:WaitForChild("RbxCharacterSounds"):Destroy()
+script.ForkedScripts.RbxCharacterSounds.Parent = game.StarterPlayer.StarterPlayerScripts
+
+game.StarterPlayer.StarterPlayerScripts:WaitForChild("PlayerModule"):Destroy()
+script.ForkedScripts.PlayerModule.Parent = game.StarterPlayer.StarterPlayerScripts
+
+return true
